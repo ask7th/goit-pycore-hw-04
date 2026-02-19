@@ -6,12 +6,12 @@ def total_salary(path) :
             for line in salaries_list:
                 parts = line.strip().split(",")
                 if len(parts) != 2:
-                    return("File is corrupted")
+                    return "File is corrupted"
                                   
                 try:
                     salaries.append(float(parts[1]))
                 except ValueError:
-                    return("File is corrupted")                
+                    return "File is corrupted"                
                 
             if not salaries:
                 return 0, 0
@@ -21,10 +21,10 @@ def total_salary(path) :
             return total, avg_salary
     
     except FileNotFoundError:
-        return("File not found")
+        return "File not found"
          
     except UnicodeDecodeError:
-        return("File is corrupted")
+        return "File is corrupted"
      
 
 result = total_salary("salary.txt")
